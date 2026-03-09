@@ -1,12 +1,14 @@
 from addPlanet import addPlanet
 
 def planets():
-    planets = {}
+    planetsDict = {}
 
     print("ready for planets")
-    addPlanet(planets)
+    addPlanet(planetsDict)
     print("Here is planet data")
-    print(planets)
+    print(planetsDict)
+
+    return planetsDict
 
 
 
