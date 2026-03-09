@@ -1,10 +1,17 @@
 def star():
-    star = {}
+    starDict = {}
+    mFinal = pow(10, 30)
     starName = input("Input name of star: ")
-    mass = input("Input mass of star (in 10 ^ 30 kg): ")
+    mass = float(input("Input mass of star (in 10 ^ 30 kg): "))
+    actualMass = mass * mFinal
     print(f"Star name is {starName}")
-    star = {"name" : starName,
-            "mass" : mass}
+    starDict = {starName : {
+            "mass" : actualMass,
+            "pos" : [0,0],
+            "v" : [0,0]}
+        }
     
     print("Star information")
-    print(star)
+    print(starDict)
+
+    return starDict

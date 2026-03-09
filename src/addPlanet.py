@@ -1,16 +1,20 @@
 
 def addPlanet(planets):
 
+    AU = 1.496 * pow(10, 11)
+    mFinal = pow(10, 24)
+
     planetName = input("Input planet name: ")
 
-    mass = input("Input planet mass (10 ^ 24 kg): ")
-    radius = input("Input radius of planet (10 ^ -3 km): ")
-    distance = input("Input planet's distance from star (10 ^ 8): ")
+    inputMass = float(input("Input planet mass (10 ^ 24 kg): "))
+    inputDistance = float(input("Input planet's distance from star in AU(1 AU = 1.496 x 10^11 m): "))
 
+    actualDistance = inputDistance * AU
+    actualMass = inputMass * mFinal
     planets[planetName] = {
-        "mass" : mass,
-        "radius" : radius,
-        "distance" : distance
+        "mass" : actualMass,
+        "pos" : [actualDistance, 0],
+        "v" : [0,0]
     }
 
     return planets
