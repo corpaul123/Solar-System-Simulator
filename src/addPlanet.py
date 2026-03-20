@@ -6,7 +6,7 @@ def addPlanet(planets):
 
     planetName = input("Input planet name: ")
 
-    inputMass = float(input("Input planet mass (10 ^ 24 kg): "))
+    inputMass = float(input("Input planet mass (10 ^ 24 kg, Earth mass = 5.98): "))
     inputDistance = float(input("Input planet's distance from star in AU(1 AU = 1.496 x 10^11 m): "))
 
     actualDistance = inputDistance * AU
