@@ -1,3 +1,5 @@
+import numpy as np
+
 def star():
     starDict = {}
     mFinal = pow(10, 30)
@@ -7,8 +9,8 @@ def star():
     print(f"Star name is {starName}")
     starDict = {starName : {
             "mass" : actualMass,
-            "pos" : [0,0],
-            "v" : [0,0]}
+            "pos" : np.array([0,0], dtype = float),
+            "v" : np.array([0,0], dtype = float)}
         }
     
     print("Star information")
