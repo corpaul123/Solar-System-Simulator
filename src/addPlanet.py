@@ -1,3 +1,4 @@
+import numpy as np
 
 def addPlanet(planets):
 
@@ -13,8 +14,8 @@ def addPlanet(planets):
     actualMass = inputMass * mFinal
     planets[planetName] = {
         "mass" : actualMass,
-        "pos" : [actualDistance, 0],
-        "v" : [0,0]
+        "pos" : np.array([actualDistance, 0], dtype = float),
+        "v" : np.array([0,0], dtype = float)
     }
 
     return planets
