@@ -27,4 +27,4 @@ class System:
         self.v -= v_cm
 
     def compute_force(self):
-        print("computing")
+        print("computing forces")
