@@ -2,7 +2,7 @@ import numpy as np
 
 def star():
     starDict = {}
-    mFinal = pow(10, 30)
+    mFinal = 1e30
     starName = input("Input name of star: ")
     mass = float(input("Input mass of star (in 10 ^ 30 kg, Sun's mass = 1.9): "))
     actualMass = mass * mFinal
