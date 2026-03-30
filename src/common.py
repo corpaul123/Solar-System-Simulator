@@ -26,5 +26,5 @@ class System:
         self.x -= x_cm
         self.v -= v_cm
 
-    def compute_force():
+    def compute_force(self):
         print("computing")
