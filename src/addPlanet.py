@@ -1,7 +1,7 @@
 import numpy as np
+    
 
-
-def addPlanet(planets, starDict):
+def addPlanet(planets, starDict, radiSet):
 
  # constants for conversion
     AU = 1.496e11
@@ -12,8 +12,16 @@ def addPlanet(planets, starDict):
     planetName = input("Input planet name: ")
 #user input
     inputMass = float(input("Input planet mass (10 ^ 24 kg, Earth mass = 5.98): "))
-    inputDistance = float(input("Input planet's distance from star in AU(1 AU = 1.496e11 m): "))
+    done = False
+    while(done != True):
+    
+        inputDistance = float(input("Input planet's distance from star in AU(1 AU = 1.496e11 m): "))
+        if inputDistance in radiSet:
+            print("Overlapping planets are not allowed")
+        else:
+            done = True
 #convert input into usable data
+    radiSet.add(inputDistance)
     actualDistance = inputDistance * AU
     actualMass = inputMass * mFinal
     v_mag = np.sqrt(G * starMass / actualDistance)
@@ -23,4 +31,4 @@ def addPlanet(planets, starDict):
         "v" : np.array([0,v_mag], dtype = float)
     }
 
-    return planets
+    return planets, radiSet
