@@ -5,6 +5,7 @@ class System:
     def __init__(
             self, num_particles: int, x: np.ndarray, v: np.ndarray, m: np.ndarray, G: float
     ) -> None:
+        #number of particles, position, velocity, mass, gravity
         self.num_particles = num_particles
         self.x = x
         self.v = v
@@ -12,7 +13,9 @@ class System:
         self.G = G
 
     def center_of_mass_correction(self) -> None:
+        #2 dimensional
         dim = self.x.shape[1]
+        #position and velocity center of mass
         x_cm = np.zeros(dim)
         v_cm = np.zeros(dim)
         M = 0.0
@@ -27,4 +30,9 @@ class System:
         self.v -= v_cm
 
     def compute_force(self):
-        print("computing forces")
+        forces = np.zeroes(self.x)
+        for i in range(self.num_particles):
+            for j in range(self.num_particles):
+                if i == j:
+                    continue
+                
