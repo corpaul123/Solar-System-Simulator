@@ -1,5 +1,6 @@
 import numpy as np
 
+#Add information for the star
 def star():
     starDict = {}
     mFinal = 1e30
