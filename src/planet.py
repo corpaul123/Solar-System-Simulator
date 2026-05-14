@@ -1,5 +1,6 @@
 from addPlanet import addPlanet
 
+#Allow users to specify information for planets
 def planets(starDict):
     planetsDict = {}
     radiSet = set()

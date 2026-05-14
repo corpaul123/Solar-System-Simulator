@@ -28,7 +28,7 @@ class System:
         v_cm /= M
         self.x -= x_cm
         self.v -= v_cm
-
+#Compute forces of orbit
     def compute_force(self):
         forces = np.zeroes(self.x)
         for i in range(self.num_particles):
