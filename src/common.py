@@ -1,5 +1,8 @@
 import numpy as np
+import math
 import matplotlib.pyplot as plt
+
+origin = np.zeroes(2)
 
 class System:
     def __init__(
@@ -11,6 +14,7 @@ class System:
         self.v = v
         self.m = m
         self.G = G
+        self.positions = []
 
     def center_of_mass_correction(self) -> None:
         #2 dimensional
@@ -29,10 +33,16 @@ class System:
         self.x -= x_cm
         self.v -= v_cm
 #Compute forces of orbit
-    def compute_force(self):
-        forces = np.zeroes(self.x)
+
+    def compute_forces(self):
+        forces = np.zeros_like(self.x)
+
+    def compute_acceleration(self):
         for i in range(self.num_particles):
+            self.accelerations[i] = origin
             for j in range(self.num_particles):
-                if i == j:
-                    continue
+                if i != j:
+                    temp = self.G * self.m[j] / math.pow((self.positions[i] - self.positions[j]).abs(), 3)
+                    self.accelerations[i] += (self.positions[j] - self.positions[i]) * temp
+        return None       
                 
