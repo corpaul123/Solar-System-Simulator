@@ -15,6 +15,7 @@ class System:
         self.m = m
         self.G = G
         self.positions = []
+        self.accelerations = []
 
     def center_of_mass_correction(self) -> None:
         #2 dimensional
@@ -45,4 +46,8 @@ class System:
                     temp = self.G * self.m[j] / math.pow((self.positions[i] - self.positions[j]).abs(), 3)
                     self.accelerations[i] += (self.positions[j] - self.positions[i]) * temp
         return None       
-                
+
+    def compute_positions(self):         
+        for i in range(self.num_particles):
+            self.positions[i] += self.v[i] + self.accelerations[i] * 0.5
+            return None
